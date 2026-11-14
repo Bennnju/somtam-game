@@ -1,0 +1,119 @@
+<div id="game">
+ <div id="hud">
+  <div class="grp"><span class="logo">🌶 ส้มตำข้ามภพ</span><span>📅 วันที่ <b id="hDay">1</b></span><span>🧍 <b id="hCust">0/8</b></span></div>
+  <div class="grp"><span>🗡 <b id="hWpn">สาก Lv1</b></span><span>💪 <b id="hResp">0</b></span><span>💰 <b id="hMoney">0</b> ฿</span><span>⭐ <b id="hStar">-</b></span></div>
+ </div>
+
+ <div id="stage">
+  <div id="sky"></div>
+  <div class="moon" id="moon1"></div><div class="moon" id="moon2"></div>
+  <div id="skyline"></div>
+  <div id="awning"></div>
+  <div class="slot" id="s0" data-i="0"><div class="spot"></div><div class="cust out"></div><div class="bubble"><span class="who"></span><span class="txt"></span></div><div class="pbar"><i></i></div><span class="tag">คิว 1</span></div>
+  <div class="slot" id="s1" data-i="1"><div class="spot"></div><div class="cust out"></div><div class="bubble"><span class="who"></span><span class="txt"></span></div><div class="pbar"><i></i></div><span class="tag">คิว 2</span></div>
+  <div id="fx"></div>
+ </div>
+
+ <div id="counter">
+  <div id="leftcol">
+   <div id="mortarWrap">
+    <div id="tapHint">แตะครกรัวๆ เพื่อตำ</div>
+    <svg class="m" viewBox="0 0 240 200">
+     <ellipse cx="120" cy="190" rx="92" ry="9" fill="#000" opacity=".35"/>
+     <path d="M78 166 L162 166 L170 186 L70 186Z" fill="#5a2610"/>
+     <path d="M18 64 C22 128 58 170 120 172 C182 170 218 128 222 64Z" fill="url(#gClay)"/>
+     <path d="M34 84 C44 126 70 150 96 160" stroke="#fff" stroke-opacity=".14" stroke-width="8" fill="none" stroke-linecap="round"/>
+     <path d="M30 110 C80 124 160 124 210 110" stroke="#000" stroke-opacity=".12" stroke-width="2" fill="none"/>
+     <ellipse cx="120" cy="64" rx="102" ry="27" fill="#b2592c"/>
+     <ellipse cx="120" cy="62" rx="102" ry="25" fill="none" stroke="#d98552" stroke-opacity=".6" stroke-width="2"/>
+     <ellipse cx="120" cy="67" rx="87" ry="20" fill="url(#gClayIn)"/>
+     <ellipse id="mix" cx="120" cy="72" rx="0" ry="0" fill="#c9a24a"/>
+    </svg>
+    <div id="contents"></div>
+    <svg id="pestle" viewBox="0 0 44 170">
+     <path d="M15 4 C15 1 29 1 29 4 L31 118 C40 128 42 150 36 162 C30 170 14 170 8 162 C2 150 4 128 13 118Z" fill="url(#gWood)"/>
+     <path d="M19 10 L19 116 M16 132 C14 146 16 156 20 162" stroke="#fff" stroke-opacity=".25" stroke-width="3" fill="none" stroke-linecap="round"/>
+     <path d="M14 40 C20 42 24 42 30 40 M14 80 C20 82 24 82 30 80" stroke="#5a3214" stroke-opacity=".4" stroke-width="1.4" fill="none"/>
+    </svg>
+   </div>
+   <div id="mashBox"><div id="mashBar"><div id="mashZone"></div><div id="mashFill"></div></div><div id="mashLbl"><span>หยาบ</span><b id="mashTxt">ยังไม่ได้ตำ</b><span>เละ</span></div></div>
+   <div id="actions">
+    <button class="btn b-pound" id="bPound">🥢 ตำ!<span class="kbd">Space</span></button>
+    <button class="btn b-serve" id="bServe">🍽 เสิร์ฟ<span class="kbd">Enter</span></button>
+    <button class="btn b-reset" id="bReset">🗑 เทใหม่</button>
+   </div>
+  </div>
+  <div id="tickets"><div class="ticket" id="t0" data-i="0"></div><div class="ticket" id="t1" data-i="1"></div></div>
+  <div id="tray"></div>
+ </div>
+
+ <div id="toast"></div>
+
+ <div class="ov show" id="titleOv"><div class="card">
+  <h1>🌶 ส้มตำข้ามภพ</h1>
+  <div class="sub">ร้านส้มตำรถเข็นใต้แสงจันทร์สองดวง · Prototype</div>
+  <ul>
+   <li>ลูกค้ามาพร้อมกันได้ <b>2 คิว</b> แตะใบออเดอร์หรือตัวลูกค้า (หรือกด ← →) เพื่อเลือกว่าจะทำให้ใคร</li>
+   <li>ใส่วัตถุดิบลงครก (กดเลข 1–8 ได้)</li>
+   <li><b>ตำตามใจ</b> แตะครกหรือกด Space กี่ครั้งก็ได้ ดูแถบความละเอียดให้อยู่ในช่องเขียวตามที่ลูกค้าสั่ง</li>
+   <li><b>เสิร์ฟ</b> แล้วทำจานต่อไปได้เลย ระหว่างที่ลูกค้าอีกคนกำลังกิน</li>
+   <li>ลูกค้าวีนต้องเลือก <b>ง้อ ประชด หรือด่าสวน</b> ให้ถูกนิสัย ไม่งั้นโดนท้าต่อย ต้องสู้กันจริงในซอยหลังตลาด!</li>
+   <li>หลังปิดร้าน ใช้เงินซื้อ/อัปเกรดอาวุธ: สาก มีดดาบ ฝาหม้อ ครกศึก</li>
+  </ul>
+  <button class="bigbtn" id="bStart">เปิดร้าน!</button>
+ </div></div>
+
+ <div class="ov" id="rantOv"><div class="card">
+  <h2>💢 ลูกค้าวีนแตก!</h2>
+  <div class="rantLine" id="rantLine"></div>
+  <div class="rtimer"><i id="rTimer"></i></div>
+  <button class="rbtn soothe" data-c="soothe"><b>🙏 ง้อ</b><span></span></button>
+  <button class="rbtn sass" data-c="sass"><b>😏 ประชด</b><span></span></button>
+  <button class="rbtn clap" data-c="clap"><b>🔥 ด่าสวน</b><span></span></button>
+  <div class="hint" id="rantHint">ลูกค้าแต่ละนิสัยแพ้ทางไม่เหมือนกัน</div>
+ </div></div>
+
+ <div class="ov" id="arenaOv"><div id="arena">
+  <div class="ar-top">
+   <div class="hpw"><div class="nm" id="arMeName">แม่ค้า</div><div class="hp"><i id="hpMe"></i><span id="hpMeT">100</span></div></div>
+   <div id="arTime">25</div>
+   <div class="hpw foe"><div class="nm" id="arFoeName"></div><div class="hp"><i id="hpFoe"></i><span id="hpFoeT"></span></div></div>
+  </div>
+  <div id="arField">
+   <div class="crowdrow"></div>
+   <div id="pl"><div class="body"></div><div id="wpn"></div></div>
+   <div id="foe"><div class="body"></div><div id="warn"></div><div id="buffTag"></div></div>
+   <div id="arMsg"></div>
+  </div>
+  <div class="ar-help"><span>👊 กันได้</span><span>💥 กันไม่อยู่ ต้อง<b>หลบ</b></span><span>✋ กันไม่ได้ <b>ฟาดขัด</b>หรือหลบ</span><span>🛡 ตีไม่เข้า ใช้<b>ท่าไม้ตาย</b></span><span>😤 รีบ<b>ตี</b>ก่อนมันบัฟ</span></div>
+  <div class="ar-btns">
+   <button id="aGuard"><b>🛡 กัน</b><small>S</small></button>
+   <button id="aDodge"><b>💨 หลบ</b><small>W / ↑</small></button>
+   <button id="aHit"><b>⚔ ฟาด</b><small>A / Space / แตะศัตรู</small></button>
+   <button id="aSp"><b>✨ ท่าไม้ตาย</b><small>D</small></button>
+  </div>
+ </div></div>
+
+ <div class="ov" id="shopOv"><div class="card shop">
+  <h2 style="text-align:center">🗡 ห้องเก็บของหลังร้าน</h2>
+  <div class="sub">เลือกอาวุธประจำตัวก่อนเปิดร้าน · 💰 <b id="shMoney"></b> ฿ · 💪 ความเกรงใจ <b id="shResp"></b></div>
+  <div id="shGrid"></div>
+  <p class="hint" style="color:#8a6a4a;margin:6px 0 0">💪 ความเกรงใจสูง = ลูกค้าไม่ค่อยกล้าวีน (ได้จากชนะไฟต์)</p>
+  <button class="bigbtn" id="bOpen">เปิดร้าน! ☀</button>
+ </div></div>
+
+ <div class="ov" id="sumOv"><div class="card">
+  <h2 style="text-align:center">🌙 ปิดร้าน วันที่ <span id="sDay"></span></h2>
+  <div class="sumgrid">
+   <div>รายได้วันนี้<b id="sInc"></b></div>
+   <div>ดาวเฉลี่ย<b id="sStar"></b></div>
+   <div>วีนแล้วด่าชนะ<b id="sWin"></b></div>
+   <div>โดนท้าต่อย<b id="sFight"></b></div>
+  </div>
+  <p id="sBest" style="text-align:center;color:#7a4a2a;margin:4px 0"></p>
+  <b style="font-family:Mitr">📱 รีวิววันนี้</b>
+  <div id="sLog"></div>
+  <p style="font-size:13px;color:#8a6a4a;text-align:center;margin:8px 0 0">วันถัดไป: ลูกค้าเยอะขึ้น ใจร้อนขึ้น และสั่งเผ็ดขึ้น</p>
+  <button class="bigbtn" id="bDay">เปิดร้านวันใหม่ ☀</button>
+ </div></div>
+</div>
