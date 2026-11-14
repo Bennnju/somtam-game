@@ -519,7 +519,8 @@ function newDay(first){
 $('#bStart').onclick=()=>{ac();sfx.ding();$('#titleOv').classList.remove('show');newDay(true)};
 $('#bDay').onclick=()=>{$('#sumOv').classList.remove('show');renderShop();$('#shopOv').classList.add('show')};
 $('#bOpen').onclick=()=>{$('#shopOv').classList.remove('show');newDay(false)};
-$('#bPound').onclick=pound;$('#bServe').onclick=serve;
+$('#bPound').addEventListener('pointerdown',e=>{e.preventDefault();pound()});
+document.addEventListener('dblclick',e=>e.preventDefault(),{passive:false});$('#bServe').onclick=serve;
 $('#bReset').onclick=()=>{if(G.running&&bowlItems.length){resetBowl();toast('เทครกทิ้งแล้ว')}};
 $('#mortarWrap').addEventListener('pointerdown',e=>{e.preventDefault();pound()});
 SLOTS.forEach(s=>{s.root.onclick=()=>{if(s.c&&s.c.state==='waiting')select(s.i)};document.getElementById('t'+s.i).onclick=()=>{if(s.c&&s.c.state==='waiting')select(s.i)}});
